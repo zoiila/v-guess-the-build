@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">V Guess the Build</title>
+  <desc id="desc">A Vack Studio banner for a Minecraft building and guessing minigame.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11101a"/>
+      <stop offset="1" stop-color="#21152a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b46af2"/>
+      <stop offset="1" stop-color="#62d9ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="360" fill="#0c0b12"/>
+  <rect x="24" y="24" width="1232" height="312" rx="20" fill="url(#background)" stroke="#594169" stroke-width="2"/>
+  <rect x="66" y="72" width="8" height="27" rx="4" fill="#c484f5"/>
+  <text x="94" y="94" fill="#d8cbe1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" letter-spacing="5">VACK STUDIO  |  MINECRAFT MINIGAME</text>
+  <text x="66" y="184" fill="#fffaff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700">V Guess the Build</text>
+  <text x="68" y="231" fill="#d9cfe0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">Build it. Guess it. Play together.</text>
+  <rect x="68" y="270" width="144" height="6" rx="3" fill="url(#accent)"/>
+  <text x="68" y="310" fill="#bdb0c7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="1">SIX ARENAS  ·  ENGLISH + العربية  ·  PAPER 26.2</text>
+  <g transform="translate(945 83)" stroke="#d9a8ff" stroke-width="2">
+    <path d="M38 4 77 26v45L38 93 0 71V26Z" fill="#30223a"/>
+    <path d="M38 4v45l39-23M38 49 0 26M38 49v44" fill="none" stroke="#bb79ed"/>
+    <path d="M88 76 126 98v43l-38 22-37-22V98Z" fill="#262b39" stroke="#73d3e5"/>
+    <path d="M88 76v44l38-22M88 120l-37-22M88 120v43" fill="none" stroke="#73d3e5"/>
+    <path d="M139 21 173 40v38l-34 19-33-19V40Z" fill="#382841" stroke="#be82ee"/>
+    <path d="M139 21v39l34-20M139 60l-33-20M139 60v37" fill="none" stroke="#be82ee"/>
+  </g>
+</svg>
