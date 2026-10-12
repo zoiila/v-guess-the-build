@@ -1,30 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
-  <title id="title">V Guess the Build</title>
-  <desc id="desc">A Vack Studio banner for a Minecraft building and guessing minigame.</desc>
+  <title id="title">V Guess the Build — Vack Studio</title>
+  <desc id="desc">A refined petrol and champagne banner with six arena tiles for the Minecraft building and guessing game.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#11101a"/>
-      <stop offset="1" stop-color="#21152a"/>
+    <linearGradient id="back" x2="1" y2="1">
+      <stop stop-color="#112F37"/>
+      <stop offset=".55" stop-color="#173F48"/>
+      <stop offset="1" stop-color="#0D252E"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#b46af2"/>
-      <stop offset="1" stop-color="#62d9ef"/>
+    <linearGradient id="gold" x2="1" y2="1">
+      <stop stop-color="#F4DFC1"/>
+      <stop offset=".52" stop-color="#D7B987"/>
+      <stop offset="1" stop-color="#AB8058"/>
     </linearGradient>
+    <linearGradient id="glow" x2="1" y2="1">
+      <stop stop-color="#79D5D0" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#79D5D0" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="3" r=".65" fill="#FFF8EB" opacity=".08"/>
+      <circle cx="12" cy="11" r=".5" fill="#FFF8EB" opacity=".07"/>
+    </pattern>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="19"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-30%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="9" stdDeviation="12" flood-color="#07191D" flood-opacity=".48"/>
+    </filter>
   </defs>
-  <rect width="1280" height="360" fill="#0c0b12"/>
-  <rect x="24" y="24" width="1232" height="312" rx="20" fill="url(#background)" stroke="#594169" stroke-width="2"/>
-  <rect x="66" y="72" width="8" height="27" rx="4" fill="#c484f5"/>
-  <text x="94" y="94" fill="#d8cbe1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" letter-spacing="5">VACK STUDIO  |  MINECRAFT MINIGAME</text>
-  <text x="66" y="184" fill="#fffaff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700">V Guess the Build</text>
-  <text x="68" y="231" fill="#d9cfe0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">Build it. Guess it. Play together.</text>
-  <rect x="68" y="270" width="144" height="6" rx="3" fill="url(#accent)"/>
-  <text x="68" y="310" fill="#bdb0c7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="1">SIX ARENAS  ·  ENGLISH + العربية  ·  PAPER 26.2</text>
-  <g transform="translate(945 83)" stroke="#d9a8ff" stroke-width="2">
-    <path d="M38 4 77 26v45L38 93 0 71V26Z" fill="#30223a"/>
-    <path d="M38 4v45l39-23M38 49 0 26M38 49v44" fill="none" stroke="#bb79ed"/>
-    <path d="M88 76 126 98v43l-38 22-37-22V98Z" fill="#262b39" stroke="#73d3e5"/>
-    <path d="M88 76v44l38-22M88 120l-37-22M88 120v43" fill="none" stroke="#73d3e5"/>
-    <path d="M139 21 173 40v38l-34 19-33-19V40Z" fill="#382841" stroke="#be82ee"/>
-    <path d="M139 21v39l34-20M139 60l-33-20M139 60v37" fill="none" stroke="#be82ee"/>
+  <rect width="1280" height="360" fill="#0B252C"/>
+  <rect x="18" y="18" width="1244" height="324" rx="24" fill="url(#back)" stroke="#D2B78A" stroke-opacity=".48"/>
+  <rect x="25" y="25" width="1230" height="310" rx="18" fill="none" stroke="#F4F0E8" stroke-opacity=".12"/>
+  <rect x="18" y="18" width="1244" height="324" rx="24" fill="url(#grain)"/>
+  <circle cx="1091" cy="131" r="145" fill="url(#glow)" filter="url(#soft)"/>
+  <path d="M808 19 639 342M894 19 725 342M981 19 812 342" stroke="#D7B987" stroke-opacity=".055" stroke-width="2"/>
+  <path d="M74 72h32" stroke="#D7B987" stroke-width="3" stroke-linecap="round"/>
+  <text x="119" y="79" fill="#E8D2A9" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5">VACK STUDIO</text>
+  <text x="76" y="172" fill="#F4F0E8" font-family="Arial, sans-serif" font-size="57" font-weight="700" letter-spacing="-1" filter="url(#shadow)">V Guess the Build</text>
+  <text x="78" y="217" fill="#C6DBD9" font-family="Arial, sans-serif" font-size="21" letter-spacing=".6">Build the secret. Guess the story.</text>
+  <path d="M78 246h481" stroke="url(#gold)" stroke-opacity=".5"/>
+  <rect x="77" y="264" width="148" height="38" rx="19" fill="url(#gold)"/>
+  <text x="151" y="289" fill="#17343B" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">SIX ARENAS</text>
+  <text x="248" y="289" fill="#DADDD4" font-family="Arial, sans-serif" font-size="14" letter-spacing="1.4">ENGLISH  ·  العربية  ·  PAPER 26.2</text>
+  <g filter="url(#shadow)" transform="translate(895 68)">
+    <rect width="274" height="225" rx="24" fill="#0C2730" stroke="#B6D7D0" stroke-opacity=".28"/>
+    <rect x="19" y="19" width="236" height="187" rx="17" fill="#153B43" stroke="#79D5D0" stroke-opacity=".3"/>
+    <path d="M39 143 87 115l48 28-48 28zm53-50 47-27 48 27-48 28zm96 51 31-18 31 18-31 18z" fill="#254D54" stroke="#D7B987" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m39 143 48 28v18l-48-28zm48 28 48-28v18l-48 28zm5-78 47 28v21L92 114zm47 28 48-28v21l-48 28z" fill="#112F37" stroke="#D7B987" stroke-opacity=".78" stroke-linejoin="round"/>
+    <path d="m188 144 31 18v18l-31-18zm31 18 31-18v18l-31 18z" fill="#112F37" stroke="#79D5D0" stroke-linejoin="round"/>
+    <circle cx="55" cy="50" r="3" fill="#E4CCA2"/><circle cx="216" cy="64" r="2" fill="#79D5D0"/>
+    <path d="M211 95h15m-7-7v15M48 89h9m-4.5-4.5v9" stroke="#E4CCA2" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 </svg>
