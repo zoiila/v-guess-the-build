@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./VGuessTheBuild-banner.svg" alt="V Guess the Build — Build it. Guess it." width="100%">
+  <img src="./VGuessTheBuild-banner.svg" alt="V Guess the Build — Build it. Guess the story." width="100%">
 </p>
 
 # V Guess the Build | Vack Studio
