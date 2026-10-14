@@ -1,44 +1,49 @@
 <p align="center">
-  <img src="./VGuessTheBuild-banner.svg" alt="V Guess the Build — Build it. Guess the story." width="100%">
+  <img src="./VGuessTheBuild-banner.svg" alt="VGuessTheBuild — Vack Studio" width="100%">
 </p>
 
-# V Guess the Build | Vack Studio
+# VGuessTheBuild | Vack Studio
 
-A timed Minecraft building and guessing game for manually configured arenas. Version **1.6.1**.
+A building and guessing minigame with six manually configured Minecraft arenas. Version **1.8.0**. The product name is consistently **VGuessTheBuild**; **VMusic** and **VPackEngine** remain separate companion plugins.
 
-## Features
+## Gameplay and entry
 
-- Six arenas positioned by the server owner in an existing world. No prebuilt map or world is included.
-- Capacity queues for 4, 6, 8, and 16 players by default. The configured 75% thresholds start those queues at 3, 5, 6, and 12 players.
-- Bilingual English and Arabic topics, messages, and persistent language selection per player.
-- Builder turns, guesses, hints, scoring, rewards, and cosmetic preferences.
-- Saved player inventory and state are restored after leaving or reconnecting.
-- Waiting music can loop through the optional VMusic integration. Native audio remains available when that provider is absent.
+- Direct arena commands `/gb1` through `/gb6`, including `/gb2`; joining opens no general menu.
+- Separate capacity queues through `/gb game 4`, `/gb game 8`, `/gb game 16` or `/gb game 4 2`. Default configured sizes are 4, 6, 8 and 16 with 75% start thresholds of 3, 5, 6 and 12.
+- Random builder turns, chat topic selection, guesses, hints and scoring. The inventory interface is reserved for cosmetics.
+- English and العربية, selected explicitly through `/gb language` or `/gb language en|ar`, with saved UUID preferences.
+- Player state restoration, existing rewards and cosmetic transactions.
+- Optional VMusic 1.7.0 native NBS waiting loop and cues; native audio fallback remains available.
+- Existing worlds and manually positioned arenas. No map or world generation is supplied.
+
+## VPackEngine integration
+
+VGuessTheBuild uses VPackEngine's public service and guarded menu events. Its 1.1.0-preview.2 context API supports waiting/game profiles, per-arena overrides, a cosmetic profile, current-session resource readiness and removal of game-owned contexts on exit. Closing the cosmetic menu removes its higher-priority context. Delayed or superseded results cannot reopen a stale menu.
+
+Cosmetics choose separate English/Arabic engine menus according to the game's saved language and reuse the existing purchases and prices. Missing engines, unavailable resources or menus use the standard cosmetic inventory. The older engine API can open already-ready menus, but does not automatically apply profiles that it cannot remove. Pack requirements remain administrator-configured in VPackEngine; the integration itself does not force downloads or create artwork.
 
 ## Requirements and setup
 
-The Java plugin targets **Minecraft Paper 26.2** and **Java 25**. Set the waiting, lobby, game, and spectator points for each arena with `/gb setwaiting <arena>`, `/gb setlobby <arena>`, `/gb setgame <arena>`, and `/gb setspectator <arena>`. Administrative setup requires `gb.admin`.
+Target: **Paper 26.2 build 133 / Java 25**. Optional integrations: **VPackEngine 1.1.0-preview.2** for owned profiles, **VMusic 1.7.0** for its waiting track and **VHeads 1.0.1** for head management. Leaf, Folia and Bedrock compatibility are unverified.
 
-Players may use `/gb game 4`, `/gb game 8`, `/gb game 16`, or `/gb game 4 2` to select a capacity and optionally arena 2. `/gb language` offers English and العربية. VMusic 1.6.0 supplies the optional original NBS waiting track. VHeads 1.0.1 can be used for optional head management.
+Stand at each chosen location and run `/gb setwaiting <arena>`, `/gb setlobby <arena>`, `/gb setgame <arena>` and `/gb setspectator <arena>`. Use `/gb setpos1 <arena>` and `/gb setpos2 <arena>` for bounds. Administrative setup and `/gb pack` diagnostics require `gb.admin`. VPackEngine menus require `vpack.use`.
+
+Configure profile/menu names under `integrations.vpackengine`, create those profiles in the engine and merge the supplied bilingual cosmetic menu examples into its existing configuration. Reload each plugin with arenas empty. Rewards, prices, SQLite data, UUID languages, snapshots and arena coordinates preserve their identities.
 
 ## Verification
 
-Version 1.6.1 passed 18 Java tests. An isolated VackMini 26.2 startup with an existing `game.min-players: 1` setting verified that a backup was made, the value migrated to 2, both V Guess the Build and VMusic enabled, and `/gb audio` responded. This startup check did not include a connected player or the owner's full server plugin collection. Earlier 1.6.0 gameplay checks do not constitute a full 1.6.1 client test. Leaf, Folia, and Bedrock compatibility has not been verified here.
-
-## Availability
-
-This public repository introduces the game. It contains no source code, plugin JAR, map, or download release. The compiled files are supplied privately by the project owner.
+Private Java 25 CI built the real plugin and passed **24 tests** with zero failures, errors or skips, including API compatibility, owned context removal operations, readiness/failure forwarding, UUID request isolation, supersession and lifecycle invalidation. JAR inspection confirms Java 25 bytecode, the VPackEngine soft dependency and no bundled Paper or VPackEngine API classes. Compilation/service checks do not prove real-client resource downloads, visual rendering, audible playback or multiplayer cleanup; those require two connected clients and the owner's plugin stack. No live server was modified in this update.
 
 ## العربية
 
-**V Guess the Build** لعبة بناء وتخمين من **Vack Studio**. إصدار **1.6.1** يدعم ست ساحات تحدد مواقعها بنفسك في عالم السيرفر، وصفوف انتظار بسعات 4 و6 و8 و16 لاعبًا. لا يوجد ماب جاهز في المشروع.
+**VGuessTheBuild** هو الاسم الموحّد للبلوجن من **Vack Studio**، وإصداره **1.8.0**. الدخول مباشر بـ`/gb2` أو `/gb game 4 2`، والـGUI مخصص للتجميل. لا يوجد ماب؛ تحدد مواقع الساحات الست بنفسك.
 
-لإعداد الساحة نفّذ `/gb setwaiting 1` و`/gb setlobby 1` و`/gb setgame 1` و`/gb setspectator 1` وأنت واقف في الموقع المناسب لكل أمر. يدخل اللاعب مثلًا بـ`/gb game 4`، ويختار لغته بـ`/gb language` أو `/gb language ar`. تحتاج الإضافة Paper 26.2 وJava 25، وتعمل موسيقى الانتظار مع VMusic الاختيارية.
+التكامل مع **VPackEngine** يربط بروفايلات باكات الانتظار واللعبة لكل ساحة، ويفتح قائمة التجميل بالعربية أو الإنجليزية حسب لغة اللاعب المحفوظة. يحتاج الربط الكامل إصدار المحرك **1.1.0-preview.2**. إذا الباك أو القائمة غير جاهزين تظهر القائمة العادية، وعند الخروج تُزال سياقات الباكات الخاصة باللعبة. الأسعار والجوائز وبيانات اللاعبين محفوظة كما هي.
 
-التحقق من 1.6.1 شمل 18 اختبار Java وتشغيلًا تجريبيًا مع إعداد قديم كان يوقف الإضافة. لم تشمل التجربة لاعبًا متصلًا أو إضافات سيرفرك كاملة. هذه الصفحة للتعريف فقط؛ ملفات الإضافة والمصدر ليست منشورة للتنزيل هنا.
+اجتاز الإصدار 24 اختبارًا والبناء على Java 25. تجربة الباكات والشكل والصوت مع لاعبين متصلين ما زالت مطلوبة؛ اختبارات الكود لا تعني اكتمال اختبار اللعب الفعلي.
 
-## Credits and rights
+## Availability and rights
 
-Developed by Vack Studio. Third-party components retain their own licenses and rights.
+This repository is an introduction only. Source, plugin binaries, checksums and download releases are not published here. The owner supplies compiled files privately.
 
-Copyright (c) Vack Studio. All rights reserved.
+Copyright (c) Vack Studio. All rights reserved. Third-party components retain their own rights.
