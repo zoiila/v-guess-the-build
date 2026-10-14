@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">VACK STUDIO V Guess the Build</title>
-  <desc id="desc">A dark violet Vack Studio banner for the V Guess the Build Minecraft minigame.</desc>
+  <title id="title">VACK STUDIO VGuessTheBuild</title>
+  <desc id="desc">A dark violet Vack Studio banner for the VGuessTheBuild Minecraft minigame.</desc>
   <defs>
     <linearGradient id="violet" x2="1" y2="1">
       <stop stop-color="#c1a2e3"/><stop offset="1" stop-color="#7b3eb7"/>
